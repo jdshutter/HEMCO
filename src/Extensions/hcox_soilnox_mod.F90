@@ -1080,6 +1080,7 @@ CONTAINS
 ! !USES:
 !
     USE Drydep_Toolbox_Mod, ONLY : BIOFIT
+    USE HCO_GeoTools_Mod, ONLY : HCO_LANDTYPE
 !
 ! !ARGUMENTS:
 !
