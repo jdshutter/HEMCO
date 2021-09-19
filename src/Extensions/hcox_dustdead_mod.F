@@ -896,7 +896,6 @@
       ExtState%USTAR%DoUse   = .TRUE.
       ExtState%Z0%DoUse      = .TRUE.
       ExtState%FRLANDIC%DoUse    = .TRUE.
-      ExtState%SNICE%DoUse       = .TRUE.
       ExtState%WLI%DoUse     = .TRUE.
 
       ! Leave w/ success

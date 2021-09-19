@@ -549,7 +549,6 @@ CONTAINS
     ! Activate met fields
     ExtState%WLI%DoUse         = .TRUE.
     ExtState%FRLANDIC%DoUse    = .TRUE.
-    ExtState%SNICE%DoUse       = .TRUE.
     ExtState%TSKIN%DoUse       = .TRUE.
     ExtState%U10M%DoUse        = .TRUE.
     ExtState%V10M%DoUse        = .TRUE.

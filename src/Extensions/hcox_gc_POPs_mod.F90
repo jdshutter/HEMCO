@@ -1695,7 +1695,6 @@ CONTAINS
     ! Activate met fields required by this extension
     ExtState%POPG%DoUse        = .TRUE.
     ExtState%FRLANDIC%DoUse    = .TRUE.
-    ExtState%SNICE%DoUse       = .TRUE.
     ExtState%AIRVOL%DoUse      = .TRUE.
     ExtState%AIRDEN%DoUse      = .TRUE.
     ExtState%FRAC_OF_PBL%DoUse = .TRUE.

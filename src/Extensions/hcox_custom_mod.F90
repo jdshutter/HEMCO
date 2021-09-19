@@ -311,7 +311,6 @@ CONTAINS
     ExtState%U10M%DoUse = .TRUE.
     ExtState%V10M%DoUse = .TRUE.
     ExtState%FRLANDIC%DoUse    = .TRUE.
-    ExtState%SNICE%DoUse       = .TRUE.
     ExtState%WLI%DoUse  = .TRUE.
 
     ! Activate this extension

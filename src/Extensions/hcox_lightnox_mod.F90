@@ -1066,7 +1066,6 @@ CONTAINS
     ExtState%CNV_MFC%DoUse    = .TRUE.
     ExtState%CNV_FRC%DoUse    = .TRUE.
     ExtState%FRLANDIC%DoUse    = .TRUE.
-    ExtState%SNICE%DoUse       = .TRUE.
     ExtState%WLI%DoUse        = .TRUE.
     ExtState%LFR%DoUse        = .TRUE.
     ExtState%FLASH_DENS%DoUse = .TRUE.

@@ -813,7 +813,7 @@ CONTAINS
     ExtState%V10M%DoUse      = .TRUE.
     ExtState%LAI%DoUse       = .TRUE.
     ExtState%FRLANDIC%DoUse    = .TRUE.
-    ExtState%SNICE%DoUse       = .TRUE.
+    ExtState%SNODP%DoUse    = .TRUE.
     ExtState%RADSWG%DoUse    = .TRUE.
     ExtState%CLDFRC%DoUse    = .TRUE.
 
@@ -1181,7 +1181,7 @@ CONTAINS
           KK = K
 
           ! If the surface is snow or ice, then set K=3
-          IF ( ExtState%SNICE%Arr%Val(I,J) > 0.4 ) KK = 3
+          IF ( ExtState%SNODP%Arr%Val(I,J) > 0.02 ) KK = 3
 
           ! USE new MODIS/KOPPEN Biometypes to read data
 
