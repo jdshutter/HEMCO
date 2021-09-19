@@ -415,7 +415,8 @@ CONTAINS
        ! enforces nighttime "albedo" value to be 1.0 (hplin, 5/7/21)
 #if !defined( HEMCO_CESM )
        ! Assume no air-sea exchange over snow/ice
-       IF ( ExtState%SNODP%Arr%Val(I,J) > 0.02_hp ) CYCLE
+       IF ( (ExtState%SNODP%Arr%Val(I,J) > 0.02_hp) .OR. &
+            (HCO_LANDTYPE(ExtState%WLI%Arr%Val(I,J), ExtState%FRLANDIC%Arr%Val(I,J)) == 2) ) CYCLE
 #endif
 
        ! Do only over the ocean:
