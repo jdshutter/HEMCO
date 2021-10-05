@@ -1183,7 +1183,7 @@ CONTAINS
           KK = K
 
           ! If the surface is snow or ice, then set K=3
-          IF ( (ExtState%SNODP%Arr%Val(I,J) > 0.02) .OR. &
+          IF ( (ExtState%SNODP%Arr%Val(I,J) > 0.2) .OR. &
                 (HCO_LANDTYPE(ExtState%WLI%Arr%Val(I,J), ExtState%FRLANDIC%Arr%Val(I,J)) == 2) ) KK = 3
 
           ! USE new MODIS/KOPPEN Biometypes to read data

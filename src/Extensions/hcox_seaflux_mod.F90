@@ -296,6 +296,7 @@ CONTAINS
 !
 ! !USES:
 !
+    USE ieee_arithmetic,    ONLY : ieee_is_finite
     USE Ocean_ToolBox_Mod,  ONLY : CALC_KG
     USE Hco_Henry_Mod,      ONLY : CALC_KH, CALC_HEFF
     USE HCO_CALC_MOD,       ONLY : HCO_CheckDepv
@@ -415,7 +416,7 @@ CONTAINS
        ! enforces nighttime "albedo" value to be 1.0 (hplin, 5/7/21)
 #if !defined( HEMCO_CESM )
        ! Assume no air-sea exchange over snow/ice
-       IF ( (ExtState%SNODP%Arr%Val(I,J) > 0.02_hp) .OR. &
+       IF ( (ieee_is_finite(ExtState%SNODP%Arr%Val(I,J)) .AND. ExtState%SNODP%Arr%Val(I,J) > 0.2_hp) .OR. &
             (HCO_LANDTYPE(ExtState%WLI%Arr%Val(I,J), ExtState%FRLANDIC%Arr%Val(I,J)) == 2) ) CYCLE
 #endif
 
