@@ -412,14 +412,6 @@ CONTAINS
        ! Make sure we have no negative seawater concentrations
        IF ( SeaConc(I,J) < 0.0_hp ) SeaConc(I,J) = 0.0_hp
 
-       ! Kludge: Do not check albedo for HEMCO within CESM because CESM
-       ! enforces nighttime "albedo" value to be 1.0 (hplin, 5/7/21)
-#if !defined( HEMCO_CESM )
-       ! Assume no air-sea exchange over snow/ice
-       IF ( (ieee_is_finite(ExtState%SNODP%Arr%Val(I,J)) .AND. ExtState%SNODP%Arr%Val(I,J) > 0.2_hp) .OR. &
-            (HCO_LANDTYPE(ExtState%WLI%Arr%Val(I,J), ExtState%FRLANDIC%Arr%Val(I,J)) == 2) ) CYCLE
-#endif
-
        ! Do only over the ocean:
        IF ( HCO_LANDTYPE( ExtState%WLI%Arr%Val(I,J), &
                           ExtState%FRLANDIC%Arr%Val(I,J) ) == 0 ) THEN
@@ -854,7 +846,6 @@ CONTAINS
     ExtState%V10M%DoUse        = .TRUE.
     ExtState%TSKIN%DoUse       = .TRUE.
     ExtState%FRLANDIC%DoUse    = .TRUE.
-    ExtState%SNODP%DoUse    = .TRUE.
     ExtState%WLI%DoUse         = .TRUE.
     IF ( HcoState%Options%PBL_DRYDEP ) THEN
        ExtState%FRAC_OF_PBL%DoUse = .TRUE.
